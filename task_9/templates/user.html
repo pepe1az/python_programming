@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Пользователь</title>
+</head>
+<body>
+  <h1>Пользователь</h1>
+
+  <p><b>ID:</b> {{ user.id }}</p>
+  <p><b>Name:</b> {{ user.name }}</p>
+
+  <h2>Подписанные валюты</h2>
+  {% if currencies %}
+  <table border="1" cellpadding="6">
+    <tr>
+      <th>ID</th><th>NumCode</th><th>CharCode</th><th>Name</th><th>Value</th><th>Nominal</th>
+    </tr>
+    {% for c in currencies %}
+    <tr>
+      <td>{{ c.id }}</td>
+      <td>{{ c.num_code }}</td>
+      <td>{{ c.char_code }}</td>
+      <td>{{ c.name }}</td>
+      <td>{{ c.value }}</td>
+      <td>{{ c.nominal }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+    <p>Нет подписок на валюты.</p>
+  {% endif %}
+
+  <p><a href="/users">Назад к пользователям</a></p>
+</body>
+</html>

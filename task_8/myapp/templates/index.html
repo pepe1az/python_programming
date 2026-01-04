@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>{{ app_name }}</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <nav>
+    {% for item in navigation %}
+      <a href="{{ item.href }}">{{ item.caption }}</a>
+    {% endfor %}
+  </nav>
+
+  <h1>{{ app_name }}</h1>
+  <p>Версия: <b>{{ app_version }}</b></p>
+  <p>Автор: <b>{{ author_name }}</b> ({{ group }})</p>
+
+  <p>Доступные разделы: /users, /currencies, /author</p>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Пользователи</title>
+</head>
+<body>
+  <h1>Пользователи</h1>
+
+  <table border="1" cellpadding="6">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Действие</th>
+    </tr>
+    {% for u in users %}
+    <tr>
+      <td>{{ u.id }}</td>
+      <td>{{ u.name }}</td>
+      <td><a href="/user?id={{ u.id }}">Открыть</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <p><a href="/">На главную</a></p>
+</body>
+</html>

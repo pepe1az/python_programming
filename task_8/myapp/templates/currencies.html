@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Currencies</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <nav>
+    {% for item in navigation %}
+      <a href="{{ item.href }}">{{ item.caption }}</a>
+    {% endfor %}
+  </nav>
+
+  <h1>Валюты</h1>
+
+  <form method="post" action="/update">
+    <button type="submit">Обновить</button>
+  </form>
+
+  {% if error %}
+    <p style="color:red;"><b>Ошибка обновления:</b> {{ error }}</p>
+  {% endif %}
+
+  <table border="1" cellpadding="6">
+    <tr>
+      <th>ID</th>
+      <th>CharCode</th>
+      <th>Name</th>
+      <th>Nominal</th>
+      <th>Value</th>
+    </tr>
+    {% for c in currencies %}
+      <tr>
+        <td>{{ c.id }}</td>
+        <td>{{ c.char_code }}</td>
+        <td>{{ c.name }}</td>
+        <td>{{ c.nominal }}</td>
+        <td>{{ c.value }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>

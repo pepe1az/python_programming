@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Главная</title>
+</head>
+<body>
+  <h1>Главная страница</h1>
+
+  <p><b>Автор:</b> {{ author.name }} ({{ author.group }})</p>
+  <p><b>Логин:</b> {{ author.login }}</p>
+
+  <nav>
+    <a href="/author">Об авторе</a> |
+    <a href="/users">Пользователи</a> |
+    <a href="/currencies">Валюты</a>
+  </nav>
+
+  <h2>Валюты (пример)</h2>
+  <ul>
+    {% for c in currencies %}
+      <li>{{ c.char_code }}: {{ c.value }}</li>
+    {% endfor %}
+  </ul>
+
+  <p>Примеры действий:</p>
+  <ul>
+    <li><a href="/currency/update?USD=99.9">/currency/update?USD=99.9</a></li>
+    <li><a href="/currency/show">/currency/show</a></li>
+  </ul>
+</body>
+</html>

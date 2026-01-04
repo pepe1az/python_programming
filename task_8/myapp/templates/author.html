@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Author</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <nav>
+    {% for item in navigation %}
+      <a href="{{ item.href }}">{{ item.caption }}</a>
+    {% endfor %}
+  </nav>
+
+  <h1>Автор</h1>
+  <p>Имя: <b>{{ author.name }}</b></p>
+  <p>Группа: <b>{{ author.group }}</b></p>
+</body>
+</html>
